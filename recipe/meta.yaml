@@ -1,5 +1,5 @@
 {% set name = "sarkit" %}
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sarkit-{{ version }}.tar.gz
-  sha256: 43d9f36a73275fbf4b4b05efef43917ca732c3f48130cba1384db6d6d30f5bdc
+  sha256: a476b21320735f839e3f593f4d7cf032416785af06102228878aedca8e517fbc
 
 build:
   entry_points:
@@ -31,7 +31,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - jbpy >=0.5.1,<0.6
+    - jbpy >=0.5.1,<0.7
     - lxml >=5.1.0
     - numpy >=1.25.0
     - shapely >=2.0.2
