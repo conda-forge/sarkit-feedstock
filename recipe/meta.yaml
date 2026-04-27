@@ -59,6 +59,7 @@ about:
   license: MIT
   license_file: LICENSE
   doc_url: https://sarkit.readthedocs.io/
+  dev_url: https://github.com/ValkyrieSystems/sarkit
 
 extra:
   recipe-maintainers:
