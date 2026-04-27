@@ -1,5 +1,5 @@
 {% set name = "sarkit" %}
-{% set version = "1.7.0" %}
+{% set version = "1.7.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sarkit-{{ version }}.tar.gz
-  sha256: 2a46f9e986b0bf738471a03ca440fd310bb193d79cce720d3ae4f3d3b2104a44
+  sha256: 63f1aa50108eac1bb87abc4fedd1142e27f7b47ea25a1430207fd142b730991d
 
 build:
   entry_points:
