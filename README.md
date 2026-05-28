@@ -9,6 +9,8 @@ Package license: MIT
 
 Summary: Suite of SAR-related tools in Python.
 
+Development: https://github.com/ValkyrieSystems/sarkit
+
 Documentation: https://sarkit.readthedocs.io/
 
 Current build status
