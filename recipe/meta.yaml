@@ -1,6 +1,6 @@
 {% set name = "sarkit" %}
 {% set version = "1.9.0" %}
-{% set python_min = "3.11" %}
+{% set python_min = "3.12" %}
 
 package:
   name: {{ name|lower }}
