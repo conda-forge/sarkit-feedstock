@@ -1,5 +1,5 @@
 {% set name = "sarkit" %}
-{% set version = "1.12.0" %}
+{% set version = "1.12.1" %}
 {% set python_min = "3.12" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/sarkit-{{ version }}.tar.gz
-  sha256: 8c236f7545b8490da538142cb9404b8aff079339ae1d90c6f9cd84d67822197c
+  sha256: aa9b61dd7c214a827ee94a9dbe2667baf72677e7c0b3d6a579364004b5c4b721
 
 build:
   entry_points:
