@@ -35,7 +35,7 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - jbpy >=0.5.1,<0.7
+    - jbpy >=0.5.1,<0.8
     - lxml >=5.1.0
     - numpy >=2.0.0
     - shapely >=2.0.6
@@ -44,6 +44,15 @@ tests:
   - python:
       imports:
         - sarkit
+        - sarkit.cphd
+        - sarkit.crsd
+        - sarkit.sicd
+        - sarkit.sicd.projection
+        - sarkit.sidd
+        - sarkit.sidd.calculations
+        - sarkit.verification
+        - sarkit.wgs84
+        - sarkit.xmlhelp
       pip_check: true
       python_version:
         - ${{ python_min }}.*
