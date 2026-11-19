@@ -1,0 +1,77 @@
+schema_version: 1
+
+context:
+  name: sarkit
+  version: "1.12.1"
+  python_min: "3.12"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/sarkit-${{ version }}.tar.gz
+  sha256: aa9b61dd7c214a827ee94a9dbe2667baf72677e7c0b3d6a579364004b5c4b721
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - cphdcheck = sarkit.verification._cphdcheck:main
+      - crsdcheck = sarkit.verification._crsdcheck:main
+      - sicdcheck = sarkit.verification._sicdcheck:main
+      - siddcheck = sarkit.verification._siddcheck:main
+      - cphdinfo = sarkit.cphd._cphdinfo:main
+      - crsdinfo = sarkit.crsd._crsdinfo:main
+      - sicdinfo = sarkit.sicd._sicdinfo:main
+      - siddinfo = sarkit.sidd._siddinfo:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pdm-backend
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - jbpy >=0.5.1,<0.7
+    - lxml >=5.1.0
+    - numpy >=2.0.0
+    - shapely >=2.0.6
+
+tests:
+  - python:
+      imports:
+        - sarkit
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+    script:
+      - cphdcheck --help
+      - crsdcheck --help
+      - sicdcheck --help
+      - siddcheck --help
+      - cphdinfo --help
+      - crsdinfo --help
+      - sicdinfo --help
+      - siddinfo --help
+
+about:
+  summary: Suite of SAR-related tools in Python.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/ValkyrieSystems/sarkit
+  repository: https://github.com/ValkyrieSystems/sarkit
+  documentation: https://sarkit.readthedocs.io/
+
+extra:
+  recipe-maintainers:
+    - pressler-vsc
+    - bombaci-vsc
+    - johnstob
